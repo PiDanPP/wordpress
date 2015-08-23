@@ -36,8 +36,8 @@ RUN rm -rf /var/www/html && mkdir /var/www/html
 VOLUME /var/www/html
 WORKDIR /var/www/html
 #确定WordPress版本
-ENV WORDPRESS_VERSION 4.3
-ENV WORDPRESS_UPSTREAM_VERSION 4.3
+ENV WORDPRESS_VERSION 4.3.0
+ENV WORDPRESS_UPSTREAM_VERSION 4.3.0
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 #下载WordPress，变量：上述确定WordPress版本
