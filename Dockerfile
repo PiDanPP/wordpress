@@ -1,5 +1,5 @@
 FROM debian:wheezy
-
+FROM apache:lastest
 RUN apt-get update && apt-get install -y \
 		apache2 \
 		curl \
