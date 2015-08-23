@@ -35,13 +35,11 @@ RUN find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
 RUN rm -rf /var/www/html && mkdir /var/www/html
 VOLUME /var/www/html
 WORKDIR /var/www/html
-#确定WordPress版本
-ENV WORDPRESS_VERSION 4.3.0
-ENV WORDPRESS_UPSTREAM_VERSION 4.3.0
+
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 #下载WordPress，变量：上述确定WordPress版本
-RUN curl -SL http://wordpress.org/wordpress-${WORDPRESS_UPSTREAM_VERSION}.tar.gz | tar -xzC /usr/src/
+RUN curl https://cn.wordpress.org/wordpress-4.3-zh_CN.tar.gz | tar -xzC /usr/src/
 
 COPY docker-apache.conf /etc/apache2/sites-available/wordpress
 RUN a2dissite 000-default && a2ensite wordpress
